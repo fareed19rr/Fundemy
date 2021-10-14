@@ -1,25 +1,48 @@
 import React, { useState, useEffect } from 'react'
-import { Col, Row, Container, Button, Form, Flex } from "react-bootstrap";
+import { Col, Row, Container, Button, Form } from "react-bootstrap";
 import { NavLink as Link } from "react-router-dom";
-import FormContainer from '../component/container/formContainer';
+import { LogBtn, NavLink } from "../elements/loginElement"
 import gambar from '../component/icons/login image2.png'
+import gambar2 from '../component/icons/login image.png'
 
 const Loginpage = () => {
-    const [email, setEmail] = useState('');
+    const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
     return (
-            <FormContainer>
                 <Row>
-                    <Col className="d-flex justify-content-between">
-                        <img src={gambar} width="1920" alt="logo" />
+                    <Col>
+                        <img src={gambar} width="640" alt="logo" />
                     </Col>
 
-                    <Col className="d-flex justify-content-between">
-                        aaa
+                    <Col className="justify-content-md-center">
+                        <h1 style={{color:'#89559F', marginTop:"80px", marginLeft:"-15px"}}>Welcome Back,</h1>
+                        <h1 style={{color:'#FABD2E', marginLeft:"-15px", marginTop:"-10px", marginBottom:"15px"}}>FunBuddies!</h1>
+                        <h6 style={{color:'#606060', marginLeft:"-15px", marginBottom:"50px"}}>Sign up to continue</h6>
+
+                        <Form>
+                            <Row>
+                                <Form.Group controlId='username'>
+                                    <h6 style={{color:'#501E65'}}>Username</h6>
+                                    <Form.Control style={{paddingRight:"220px"}} placeholder='learnwithfun' value={username} onChange={(e) => setUsername(e.target.value)}></Form.Control>
+                                </Form.Group>
+                            </Row>
+
+                            <Row>
+                                <Form.Group controlId='password'>
+                                    <h6 style={{color:'#501E65'}}>Password</h6>
+                                    <Form.Control style={{paddingRight:"220px"}} type='password' placeholder='********' value={password} onChange={(e) => setPassword(e.target.value)}></Form.Control>
+                                </Form.Group>
+                            </Row>
+
+                            <LogBtn style={{background:"#FABD2E"}} type='submit' variant='primary'>Login</LogBtn>
+                            
+                            <Row>
+                                Don't have an account? &nbsp;<NavLink to ="/register" >Sign up</NavLink>
+                            </Row>
+                        </Form>
                     </Col>
                 </Row>
-            </FormContainer>
     )
 }
 

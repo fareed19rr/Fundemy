@@ -1,43 +1,59 @@
-import React from 'react'
-import { Col, Row, Container } from "react-bootstrap";
+import React, { useState, useEffect } from 'react'
+import { Col, Row, Button, Form } from "react-bootstrap";
+import { NavLink, RegBtn } from '../elements/loginElement'
+import gambar from '../component/icons/login image.png'
 
 const Registerpage = () => {
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('')
+    const [name, setName] = useState('')
     return (
-        <Container>
-      <Row>
-        <Col>.col</Col>
-      </Row>
-      <Row>
-        <Col>.col</Col>
-        <Col>.col</Col>
-        <Col>.col</Col>
-        <Col>.col</Col>
-      </Row>
-      <Row>
-        <Col xs="3">.col-3</Col>
-        <Col xs="auto">.col-auto - variable width content</Col>
-        <Col xs="3">.col-3</Col>
-      </Row>
-      <Row>
-        <Col xs="6">.col-6</Col>
-        <Col xs="6">.col-6</Col>
-      </Row>
-      <Row>
-        <Col xs="6" sm="4">.col-6 .col-sm-4</Col>
-        <Col xs="6" sm="4">.col-6 .col-sm-4</Col>
-        <Col sm="4">.col-sm-4</Col>
-      </Row>
-      <Row>
-        <Col sm={{ size: 6, order: 2, offset: 1 }}>.col-sm-6 .order-sm-2 .offset-sm-1</Col>
-      </Row>
-      <Row>
-        <Col sm="12" md={{ size: 6, offset: 3 }}>.col-sm-12 .col-md-6 .offset-md-3</Col>
-      </Row>
-      <Row>
-        <Col sm={{ size: 'auto', offset: 1 }}>.col-sm-auto .offset-sm-1</Col>
-        <Col sm={{ size: 'auto', offset: 1 }}>.col-sm-auto .offset-sm-1</Col>
-      </Row>
-    </Container>
+        <Row>
+            <Col>
+                <img src={gambar} width="640" alt="logo" />
+            </Col>
+
+            <Col className="justify-content-md-center">
+                <h1 style={{color:'#89559F', marginTop:"80px", marginLeft:"-15px"}}>Welcome Back,</h1>
+                <h1 style={{color:'#FABD2E', marginLeft:"-15px", marginTop:"-10px", marginBottom:"15px"}}>FunBuddies!</h1>
+                <h6 style={{color:'#606060', marginLeft:"-15px", marginBottom:"50px"}}>Sign up to continue</h6>
+
+                <Form>
+                    <Row>
+                        <Form.Group controlId="name">
+                            <h6 style={{color:'#501E65'}}>Name</h6>
+                            <Form.Control style={{borderRight:"20px"}} placeholder="FUNBuddies" value={name} onChange={(e)=>setName(e.target.value)}></Form.Control>
+                        </Form.Group>
+
+                        <Form.Group controlId="username">
+                            <h6 style={{color:'#501E65'}}>Username</h6>
+                            <Form.Control placeholder="teamwithfun" value={username} onChange={(e)=>setUsername(e.target.value)}></Form.Control>
+                        </Form.Group>
+                    </Row>
+
+                    <Row>
+                        <Form.Group controlId='email'>
+                            <h6 style={{color:'#501E65'}}>Email</h6>
+                            <Form.Control style={{paddingRight:"220px"}} type='email' placeholder='teamwithfun@gmail.com' value={email} onChange={(e) => setEmail(e.target.value)}></Form.Control>
+                        </Form.Group>
+                    </Row>
+
+                    <Row>
+                        <Form.Group controlId='password'>
+                            <h6 style={{color:'#501E65'}}>Password</h6>
+                            <Form.Control style={{paddingRight:"220px"}} type='password' placeholder='Min. 8 Character' value={password} onChange={(e) => setPassword(e.target.value)}></Form.Control>
+                        </Form.Group>
+                    </Row>
+
+                    <RegBtn  type='submit' variant='primary'>Create Account</RegBtn>
+                            
+                        <Row>
+                            Already Have an Account? &nbsp; <NavLink to ="/login" >Log in</NavLink>
+                        </Row>
+                </Form>
+            </Col>
+        </Row>
     )
 }
 
