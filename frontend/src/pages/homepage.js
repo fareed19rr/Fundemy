@@ -1,25 +1,14 @@
 import React from 'react'
 import { Col, Row, Container, Table } from "react-bootstrap";
+import gambar1 from "../component/icons/header-lp 1.png"
 
 const Homepage = () => {
     return (
-        <div className="">
-            <Table align-center>
-                <thead>
-                    <tr>
-                        <th>1</th>
-                        <th>2</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr>
-                        <td>3</td>
-                        <td>4</td>
-                    </tr>
-                </tbody>
-            </Table>
-        </div>
+        <Row>
+            <Row>
+                <img src={gambar1} width="100%" style={{marginLeft:"100px"}} alt="logo" />
+            </Row>
+        </Row>
     )
 }
 

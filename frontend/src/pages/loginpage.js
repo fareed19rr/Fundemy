@@ -31,11 +31,11 @@ const Loginpage = () => {
                             <Row>
                                 <Form.Group controlId='password'>
                                     <h6 style={{color:'#501E65'}}>Password</h6>
-                                    <Form.Control style={{paddingRight:"220px"}} type='password' placeholder='********' value={password} onChange={(e) => setPassword(e.target.value)}></Form.Control>
+                                    <Form.Control style={{paddingRight:"220px", marginBottom:"40px"}} type='password' placeholder='********' value={password} onChange={(e) => setPassword(e.target.value)}></Form.Control>
                                 </Form.Group>
                             </Row>
 
-                            <LogBtn style={{background:"#FABD2E"}} type='submit' variant='primary'>Login</LogBtn>
+                            <LogBtn type='submit' variant='primary'>Login</LogBtn>
                             
                             <Row>
                                 Don't have an account? &nbsp;<NavLink to ="/register" >Sign up</NavLink>

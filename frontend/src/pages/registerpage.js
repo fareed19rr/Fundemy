@@ -23,7 +23,7 @@ const Registerpage = () => {
                     <Row>
                         <Form.Group controlId="name">
                             <h6 style={{color:'#501E65'}}>Name</h6>
-                            <Form.Control style={{borderRight:"20px"}} placeholder="FUNBuddies" value={name} onChange={(e)=>setName(e.target.value)}></Form.Control>
+                            <Form.Control style={{BorderRight:"20px"}} placeholder="FUNBuddies" value={name} onChange={(e)=>setName(e.target.value)}></Form.Control>
                         </Form.Group>
 
                         <Form.Group controlId="username">
